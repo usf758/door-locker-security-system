@@ -1,0 +1,30 @@
+/* ==================================================================
+ * Module: Buzzer Driver
+ *
+ * File Name: buzzer.h
+ *
+ * Description: Header File for Buzzer driver.
+ *
+ * Author: Yousef Amr
+ *
+ * Date: 03/11/2023
+ * ====================================================================*/
+#ifndef BUZZER_H_
+#define BUZZER_H_
+
+#include "std_types.h"
+
+/************************************************
+ * 				Definitions
+ ***********************************************/
+#define  BUZZER_PORT		PORTD_ID
+#define	 BUZZER_PIN			PIN3_ID
+
+/************************************************
+ * 				Prototypes
+ ***********************************************/
+void BUZZER_init(void);
+void BUZZER_On(void);
+void BUZZER_Off(void);
+
+#endif /* BUZZER_H_ */

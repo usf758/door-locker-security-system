@@ -1,0 +1,2299 @@
+19:28:06 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:27:20 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Building file: ../Lcd_driver.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Lcd_driver.d" -MT"Lcd_driver.o" -c -o "Lcd_driver.o" "../Lcd_driver.c"
+In file included from ../Lcd_driver.c:11:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Lcd_driver.c: In function 'lcd_intgertostring':
+../Lcd_driver.c:156: warning: implicit declaration of function 'itoa'
+../Lcd_driver.c:157: warning: pointer targets in passing argument 1 of 'lcd_displaystring' differ in signedness
+Finished building: ../Lcd_driver.c
+ 
+Building file: ../buzzer.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"buzzer.d" -MT"buzzer.o" -c -o "buzzer.o" "../buzzer.c"
+Finished building: ../buzzer.c
+ 
+Building file: ../dc_motor.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"dc_motor.d" -MT"dc_motor.o" -c -o "dc_motor.o" "../dc_motor.c"
+Finished building: ../dc_motor.c
+ 
+Building file: ../external_eeprom.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"external_eeprom.d" -MT"external_eeprom.o" -c -o "external_eeprom.o" "../external_eeprom.c"
+Finished building: ../external_eeprom.c
+ 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:13:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'check_pass':
+../main.c:33: warning: implicit declaration of function 'EEPROM_readByte'
+../main.c:35: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:36: warning: implicit declaration of function 'itoa'
+../main.c:41: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:45: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'receivesetpass':
+../main.c:52: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:53: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:57: warning: implicit declaration of function 'atoi'
+../main.c:58: warning: implicit declaration of function 'EEPROM_writeByte'
+../main.c:62: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:65: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main':
+../main.c:75: warning: implicit declaration of function 'lcd_init'
+../main.c:85: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:101: warning: implicit declaration of function 'lcd_displaystring'
+Finished building: ../main.c
+ 
+Building file: ../timer1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"timer1.d" -MT"timer1.o" -c -o "timer1.o" "../timer1.c"
+../timer1.c: In function 'Timer1_setCallBack':
+../timer1.c:129: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer1.c
+ 
+Building file: ../twi.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"twi.d" -MT"twi.o" -c -o "twi.o" "../twi.c"
+Finished building: ../twi.c
+ 
+Building file: ../uartf.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"uartf.d" -MT"uartf.o" -c -o "uartf.o" "../uartf.c"
+Finished building: ../uartf.c
+ 
+Building target: MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,MC2.map -mmcu=atmega32 -o "MC2.elf"  ./Lcd_driver.o ./buzzer.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./main.o ./timer1.o ./twi.o ./uartf.o   
+Finished building target: MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S MC2.elf  >"MC2.lss"
+Finished building: MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:27:23 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14556 bytes (44.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:27:24 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'myOwnDelay':
+../main.c:18: error: 'prescaler_64' undeclared (first use in this function)
+../main.c:18: error: (Each undeclared identifier is reported only once
+../main.c:18: error: for each function it appears in.)
+../main.c: In function 'main':
+../main.c:31: error: 'prescaler_64' undeclared (first use in this function)
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+13:28:21 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:28:22 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14556 bytes (44.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:28:22 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'myOwnDelay':
+../main.c:18: error: 'prescaler_64' undeclared (first use in this function)
+../main.c:18: error: (Each undeclared identifier is reported only once
+../main.c:18: error: for each function it appears in.)
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+13:29:01 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:29:01 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14556 bytes (44.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:29:01 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building file: ../timer1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"timer1.d" -MT"timer1.o" -c -o "timer1.o" "../timer1.c"
+../timer1.c: In function 'Timer1_setCallBack':
+../timer1.c:129: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer1.c
+ 
+Building target: timer_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,timer_test.map -mmcu=atmega32 -o "timer_test.elf"  ./Lcd_driver.o ./gpio.o ./main.o ./timer1.o   
+Finished building target: timer_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S timer_test.elf  >"timer_test.lss"
+Finished building: timer_test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8718 bytes (26.6% Full)
+(.text + .data + .bootloader)
+
+Data:         11 bytes (0.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:43:33 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:43:34 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14556 bytes (44.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:43:34 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+../main.c: In function 'myOwnDelay':
+../main.c:17: error: 'TIMER1_PRESCALER_8' undeclared (first use in this function)
+../main.c:17: error: (Each undeclared identifier is reported only once
+../main.c:17: error: for each function it appears in.)
+../main.c:17: error: 'NORMAL_MODE' undeclared (first use in this function)
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+13:44:07 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:44:08 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14556 bytes (44.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:44:08 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: timer_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,timer_test.map -mmcu=atmega32 -o "timer_test.elf"  ./Lcd_driver.o ./gpio.o ./main.o ./timer1.o   
+Finished building target: timer_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S timer_test.elf  >"timer_test.lss"
+Finished building: timer_test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8740 bytes (26.7% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:45:02 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:45:02 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14556 bytes (44.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:45:03 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: timer_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,timer_test.map -mmcu=atmega32 -o "timer_test.elf"  ./Lcd_driver.o ./gpio.o ./main.o ./timer1.o   
+Finished building target: timer_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S timer_test.elf  >"timer_test.lss"
+Finished building: timer_test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8740 bytes (26.7% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:52:29 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:52:30 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14556 bytes (44.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+13:52:31 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Building file: ../timer1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"timer1.d" -MT"timer1.o" -c -o "timer1.o" "../timer1.c"
+../timer1.c: In function 'Timer1_setCallBack':
+../timer1.c:128: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer1.c
+ 
+Building target: timer_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,timer_test.map -mmcu=atmega32 -o "timer_test.elf"  ./Lcd_driver.o ./gpio.o ./main.o ./timer1.o   
+Finished building target: timer_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S timer_test.elf  >"timer_test.lss"
+Finished building: timer_test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8754 bytes (26.7% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:04:26 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:04:26 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14556 bytes (44.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:04:26 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: timer_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,timer_test.map -mmcu=atmega32 -o "timer_test.elf"  ./Lcd_driver.o ./gpio.o ./main.o ./timer1.o   
+Finished building target: timer_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S timer_test.elf  >"timer_test.lss"
+Finished building: timer_test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8754 bytes (26.7% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:10:15 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:10:16 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14556 bytes (44.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:10:16 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Building file: ../timer1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"timer1.d" -MT"timer1.o" -c -o "timer1.o" "../timer1.c"
+../timer1.c: In function 'Timer1_setCallBack':
+../timer1.c:136: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer1.c
+ 
+Building target: timer_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,timer_test.map -mmcu=atmega32 -o "timer_test.elf"  ./Lcd_driver.o ./gpio.o ./main.o ./timer1.o   
+Finished building target: timer_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S timer_test.elf  >"timer_test.lss"
+Finished building: timer_test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8810 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:14:14 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:14:15 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14556 bytes (44.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:14:15 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building file: ../timer1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"timer1.d" -MT"timer1.o" -c -o "timer1.o" "../timer1.c"
+../timer1.c: In function 'Timer1_setCallBack':
+../timer1.c:136: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer1.c
+ 
+Building target: timer_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,timer_test.map -mmcu=atmega32 -o "timer_test.elf"  ./Lcd_driver.o ./gpio.o ./main.o ./timer1.o   
+Finished building target: timer_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S timer_test.elf  >"timer_test.lss"
+Finished building: timer_test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8790 bytes (26.8% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:14:29 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:14:29 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14556 bytes (44.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:14:29 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8790 bytes (26.8% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:15:52 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:15:52 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14556 bytes (44.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:15:53 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: timer_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,timer_test.map -mmcu=atmega32 -o "timer_test.elf"  ./Lcd_driver.o ./gpio.o ./main.o ./timer1.o   
+Finished building target: timer_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S timer_test.elf  >"timer_test.lss"
+Finished building: timer_test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:16:41 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:16:42 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14556 bytes (44.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:16:42 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: timer_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,timer_test.map -mmcu=atmega32 -o "timer_test.elf"  ./Lcd_driver.o ./gpio.o ./main.o ./timer1.o   
+Finished building target: timer_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S timer_test.elf  >"timer_test.lss"
+Finished building: timer_test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:17:24 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12038 bytes (36.7% Full)
+(.text + .data + .bootloader)
+
+Data:        133 bytes (6.5% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:17:24 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14556 bytes (44.4% Full)
+(.text + .data + .bootloader)
+
+Data:        286 bytes (14.0% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:17:24 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+Finished building: ../main.c
+ 
+Building target: timer_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,timer_test.map -mmcu=atmega32 -o "timer_test.elf"  ./Lcd_driver.o ./gpio.o ./main.o ./timer1.o   
+Finished building target: timer_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S timer_test.elf  >"timer_test.lss"
+Finished building: timer_test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:28:51 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:13:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'myOwnDelay':
+../main.c:48: error: 'Timer1_ConfigType' undeclared (first use in this function)
+../main.c:48: error: (Each undeclared identifier is reported only once
+../main.c:48: error: for each function it appears in.)
+../main.c:48: error: expected ';' before 'timer_Configuration'
+../main.c:49: warning: implicit declaration of function 'Timer1_init'
+../main.c:49: error: 'timer_Configuration' undeclared (first use in this function)
+../main.c:51: warning: implicit declaration of function 'Timer1_setCallBack'
+../main.c:55: warning: implicit declaration of function 'Timer1_deInit'
+../main.c: In function 'check_pass':
+../main.c:61: warning: implicit declaration of function 'EEPROM_readByte'
+../main.c:63: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:64: warning: implicit declaration of function 'itoa'
+../main.c:69: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:73: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'receivesetpass':
+../main.c:80: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:81: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:85: warning: implicit declaration of function 'atoi'
+../main.c:86: warning: implicit declaration of function 'EEPROM_writeByte'
+../main.c:90: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:93: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main':
+../main.c:103: warning: implicit declaration of function 'lcd_init'
+../main.c:113: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:129: warning: implicit declaration of function 'lcd_displaystring'
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+14:28:51 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Building file: ../Lcd_driver.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Lcd_driver.d" -MT"Lcd_driver.o" -c -o "Lcd_driver.o" "../Lcd_driver.c"
+In file included from ../Lcd_driver.c:11:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Lcd_driver.c: In function 'lcd_intgertostring':
+../Lcd_driver.c:156: warning: implicit declaration of function 'itoa'
+../Lcd_driver.c:157: warning: pointer targets in passing argument 1 of 'lcd_displaystring' differ in signedness
+Finished building: ../Lcd_driver.c
+ 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"keypad.d" -MT"keypad.o" -c -o "keypad.o" "../keypad.c"
+In file included from ../keypad.c:14:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../keypad.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:4:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'checkpass':
+../main.c:24: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:28: warning: implicit declaration of function 'LCD_clearScreen'
+../main.c:29: warning: implicit declaration of function 'lcd_displaystring'
+../main.c:30: warning: implicit declaration of function 'LCD_movecursor'
+../main.c:35: warning: implicit declaration of function 'lcd_displayCharacter'
+../main.c:45: warning: implicit declaration of function 'itoa'
+../main.c:49: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main_menu':
+../main.c:66: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:68: warning: implicit declaration of function 'strcmp'
+../main.c:74: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:96: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:110: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:130: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'setpassword':
+../main.c:139: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:188: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:189: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'passcheck':
+../main.c:196: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c: In function 'main':
+../main.c:216: warning: implicit declaration of function 'lcd_init'
+Finished building: ../main.c
+ 
+Building file: ../timer1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"timer1.d" -MT"timer1.o" -c -o "timer1.o" "../timer1.c"
+../timer1.c: In function 'Timer1_setCallBack':
+../timer1.c:136: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer1.c
+ 
+Building file: ../uartf.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"uartf.d" -MT"uartf.o" -c -o "uartf.o" "../uartf.c"
+Finished building: ../uartf.c
+ 
+Building target: mc1_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,mc1_test.map -mmcu=atmega32 -o "mc1_test.elf"  ./Lcd_driver.o ./gpio.o ./keypad.o ./main.o ./timer1.o ./uartf.o   
+Finished building target: mc1_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S mc1_test.elf  >"mc1_test.lss"
+Finished building: mc1_test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15650 bytes (47.8% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:28:53 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:29:39 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'check_pass':
+../main.c:62: warning: implicit declaration of function 'EEPROM_readByte'
+../main.c:64: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:65: warning: implicit declaration of function 'itoa'
+../main.c:70: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:74: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'receivesetpass':
+../main.c:81: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:82: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:86: warning: implicit declaration of function 'atoi'
+../main.c:87: warning: implicit declaration of function 'EEPROM_writeByte'
+../main.c:91: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:94: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main':
+../main.c:104: warning: implicit declaration of function 'lcd_init'
+../main.c:114: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:130: warning: implicit declaration of function 'lcd_displaystring'
+Finished building: ../main.c
+ 
+Building file: ../timer1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"timer1.d" -MT"timer1.o" -c -o "timer1.o" "../timer1.c"
+../timer1.c: In function 'Timer1_setCallBack':
+../timer1.c:136: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer1.c
+ 
+Building target: MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,MC2.map -mmcu=atmega32 -o "MC2.elf"  ./Lcd_driver.o ./buzzer.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./main.o ./timer1.o ./twi.o ./uartf.o   
+Finished building target: MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S MC2.elf  >"MC2.lss"
+Finished building: MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12068 bytes (36.8% Full)
+(.text + .data + .bootloader)
+
+Data:        140 bytes (6.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:29:40 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15650 bytes (47.8% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:29:40 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:29:45 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12068 bytes (36.8% Full)
+(.text + .data + .bootloader)
+
+Data:        140 bytes (6.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:29:45 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15650 bytes (47.8% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:29:45 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:32:28 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'check_pass':
+../main.c:62: warning: implicit declaration of function 'EEPROM_readByte'
+../main.c:64: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:65: warning: implicit declaration of function 'itoa'
+../main.c:70: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:74: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'receivesetpass':
+../main.c:81: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:82: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:86: warning: implicit declaration of function 'atoi'
+../main.c:87: warning: implicit declaration of function 'EEPROM_writeByte'
+../main.c:91: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:94: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main':
+../main.c:104: warning: implicit declaration of function 'lcd_init'
+../main.c:114: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:130: warning: implicit declaration of function 'lcd_displaystring'
+Finished building: ../main.c
+ 
+Building file: ../timer1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"timer1.d" -MT"timer1.o" -c -o "timer1.o" "../timer1.c"
+../timer1.c: In function 'Timer1_setCallBack':
+../timer1.c:136: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer1.c
+ 
+Building target: MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,MC2.map -mmcu=atmega32 -o "MC2.elf"  ./Lcd_driver.o ./buzzer.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./main.o ./timer1.o ./twi.o ./uartf.o   
+Finished building target: MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S MC2.elf  >"MC2.lss"
+Finished building: MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12068 bytes (36.8% Full)
+(.text + .data + .bootloader)
+
+Data:        140 bytes (6.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:32:29 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15650 bytes (47.8% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:32:29 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:34:31 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'check_pass':
+../main.c:55: warning: implicit declaration of function 'EEPROM_readByte'
+../main.c:57: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:58: warning: implicit declaration of function 'itoa'
+../main.c:63: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:67: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'receivesetpass':
+../main.c:74: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:75: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:79: warning: implicit declaration of function 'atoi'
+../main.c:80: warning: implicit declaration of function 'EEPROM_writeByte'
+../main.c:84: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:87: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main':
+../main.c:97: warning: implicit declaration of function 'lcd_init'
+../main.c:107: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:123: warning: implicit declaration of function 'lcd_displaystring'
+Finished building: ../main.c
+ 
+Building target: MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,MC2.map -mmcu=atmega32 -o "MC2.elf"  ./Lcd_driver.o ./buzzer.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./main.o ./timer1.o ./twi.o ./uartf.o   
+Finished building target: MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S MC2.elf  >"MC2.lss"
+Finished building: MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12046 bytes (36.8% Full)
+(.text + .data + .bootloader)
+
+Data:        140 bytes (6.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:34:32 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15650 bytes (47.8% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:34:32 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:36:01 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'check_pass':
+../main.c:57: warning: implicit declaration of function 'EEPROM_readByte'
+../main.c:59: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:60: warning: implicit declaration of function 'itoa'
+../main.c:65: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:69: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'receivesetpass':
+../main.c:76: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:77: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:81: warning: implicit declaration of function 'atoi'
+../main.c:82: warning: implicit declaration of function 'EEPROM_writeByte'
+../main.c:86: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:89: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main':
+../main.c:100: warning: implicit declaration of function 'lcd_init'
+../main.c:110: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:126: warning: implicit declaration of function 'lcd_displaystring'
+Finished building: ../main.c
+ 
+Building target: MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,MC2.map -mmcu=atmega32 -o "MC2.elf"  ./Lcd_driver.o ./buzzer.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./main.o ./timer1.o ./twi.o ./uartf.o   
+Finished building target: MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S MC2.elf  >"MC2.lss"
+Finished building: MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12060 bytes (36.8% Full)
+(.text + .data + .bootloader)
+
+Data:        140 bytes (6.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:36:02 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15650 bytes (47.8% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:36:02 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:38:33 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'myOwnDelay':
+../main.c:47: warning: unused variable 'num'
+../main.c: In function 'check_pass':
+../main.c:62: warning: implicit declaration of function 'EEPROM_readByte'
+../main.c:64: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:65: warning: implicit declaration of function 'itoa'
+../main.c:70: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:74: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'receivesetpass':
+../main.c:81: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:82: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:86: warning: implicit declaration of function 'atoi'
+../main.c:87: warning: implicit declaration of function 'EEPROM_writeByte'
+../main.c:91: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:94: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main':
+../main.c:105: warning: implicit declaration of function 'lcd_init'
+../main.c:115: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:131: warning: implicit declaration of function 'lcd_displaystring'
+Finished building: ../main.c
+ 
+Building target: MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,MC2.map -mmcu=atmega32 -o "MC2.elf"  ./Lcd_driver.o ./buzzer.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./main.o ./timer1.o ./twi.o ./uartf.o   
+Finished building target: MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S MC2.elf  >"MC2.lss"
+Finished building: MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12090 bytes (36.9% Full)
+(.text + .data + .bootloader)
+
+Data:        140 bytes (6.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:38:34 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15650 bytes (47.8% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:38:34 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:39:18 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'check_pass':
+../main.c:62: warning: implicit declaration of function 'EEPROM_readByte'
+../main.c:64: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:65: warning: implicit declaration of function 'itoa'
+../main.c:70: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:74: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'receivesetpass':
+../main.c:81: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:82: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:86: warning: implicit declaration of function 'atoi'
+../main.c:87: warning: implicit declaration of function 'EEPROM_writeByte'
+../main.c:91: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:94: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main':
+../main.c:105: warning: implicit declaration of function 'lcd_init'
+../main.c:115: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:131: warning: implicit declaration of function 'lcd_displaystring'
+Finished building: ../main.c
+ 
+Building target: MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,MC2.map -mmcu=atmega32 -o "MC2.elf"  ./Lcd_driver.o ./buzzer.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./main.o ./timer1.o ./twi.o ./uartf.o   
+Finished building target: MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S MC2.elf  >"MC2.lss"
+Finished building: MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   12082 bytes (36.9% Full)
+(.text + .data + .bootloader)
+
+Data:        140 bytes (6.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:39:19 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15650 bytes (47.8% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:39:19 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:42:02 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'check_pass':
+../main.c:62: warning: implicit declaration of function 'EEPROM_readByte'
+../main.c:64: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:65: warning: implicit declaration of function 'itoa'
+../main.c:70: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:74: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'receivesetpass':
+../main.c:81: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:82: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:86: warning: implicit declaration of function 'atoi'
+../main.c:87: warning: implicit declaration of function 'EEPROM_writeByte'
+../main.c:91: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:94: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main':
+../main.c:105: warning: implicit declaration of function 'lcd_init'
+../main.c:115: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+Finished building: ../main.c
+ 
+Building target: MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,MC2.map -mmcu=atmega32 -o "MC2.elf"  ./Lcd_driver.o ./buzzer.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./main.o ./timer1.o ./twi.o ./uartf.o   
+Finished building target: MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S MC2.elf  >"MC2.lss"
+Finished building: MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11624 bytes (35.5% Full)
+(.text + .data + .bootloader)
+
+Data:        130 bytes (6.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:42:03 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   15650 bytes (47.8% Full)
+(.text + .data + .bootloader)
+
+Data:        288 bytes (14.1% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:42:03 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:44:35 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11624 bytes (35.5% Full)
+(.text + .data + .bootloader)
+
+Data:        130 bytes (6.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:44:35 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:4:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'myOwnDelay':
+../main.c:38: error: 'Timer1_ConfigType' undeclared (first use in this function)
+../main.c:38: error: (Each undeclared identifier is reported only once
+../main.c:38: error: for each function it appears in.)
+../main.c:38: error: expected ';' before 'timer_Configuration'
+../main.c:39: warning: implicit declaration of function 'Timer1_init'
+../main.c:39: error: 'timer_Configuration' undeclared (first use in this function)
+../main.c:41: warning: implicit declaration of function 'Timer1_setCallBack'
+../main.c:45: warning: implicit declaration of function 'Timer1_deInit'
+../main.c: In function 'checkpass':
+../main.c:51: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:55: warning: implicit declaration of function 'LCD_clearScreen'
+../main.c:56: warning: implicit declaration of function 'lcd_displaystring'
+../main.c:57: warning: implicit declaration of function 'LCD_movecursor'
+../main.c:62: warning: implicit declaration of function 'lcd_displayCharacter'
+../main.c:72: warning: implicit declaration of function 'itoa'
+../main.c:76: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main_menu':
+../main.c:93: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:95: warning: implicit declaration of function 'strcmp'
+../main.c:101: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:123: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:137: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:157: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'setpassword':
+../main.c:166: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:215: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:216: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'passcheck':
+../main.c:223: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c: In function 'main':
+../main.c:243: warning: implicit declaration of function 'lcd_init'
+make: *** [main.o] Error 1
+"make all" terminated with exit code 2. Build might be incomplete.
+14:44:36 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:45:22 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11624 bytes (35.5% Full)
+(.text + .data + .bootloader)
+
+Data:        130 bytes (6.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:45:23 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:5:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'checkpass':
+../main.c:52: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:56: warning: implicit declaration of function 'LCD_clearScreen'
+../main.c:57: warning: implicit declaration of function 'lcd_displaystring'
+../main.c:58: warning: implicit declaration of function 'LCD_movecursor'
+../main.c:63: warning: implicit declaration of function 'lcd_displayCharacter'
+../main.c:73: warning: implicit declaration of function 'itoa'
+../main.c:77: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main_menu':
+../main.c:94: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:96: warning: implicit declaration of function 'strcmp'
+../main.c:102: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:124: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:138: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:158: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'setpassword':
+../main.c:167: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:216: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:217: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'passcheck':
+../main.c:224: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c: In function 'main':
+../main.c:244: warning: implicit declaration of function 'lcd_init'
+Finished building: ../main.c
+ 
+Building target: mc1_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,mc1_test.map -mmcu=atmega32 -o "mc1_test.elf"  ./Lcd_driver.o ./gpio.o ./keypad.o ./main.o ./timer1.o ./uartf.o   
+Finished building target: mc1_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S mc1_test.elf  >"mc1_test.lss"
+Finished building: mc1_test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14810 bytes (45.2% Full)
+(.text + .data + .bootloader)
+
+Data:        295 bytes (14.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:45:23 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:47:59 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'check_pass':
+../main.c:62: warning: implicit declaration of function 'EEPROM_readByte'
+../main.c:64: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:65: warning: implicit declaration of function 'itoa'
+../main.c:70: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:74: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'receivesetpass':
+../main.c:81: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:82: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:86: warning: implicit declaration of function 'atoi'
+../main.c:87: warning: implicit declaration of function 'EEPROM_writeByte'
+../main.c:91: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:94: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main':
+../main.c:105: warning: implicit declaration of function 'lcd_init'
+../main.c:115: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+Finished building: ../main.c
+ 
+Building target: MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,MC2.map -mmcu=atmega32 -o "MC2.elf"  ./Lcd_driver.o ./buzzer.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./main.o ./timer1.o ./twi.o ./uartf.o   
+Finished building target: MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S MC2.elf  >"MC2.lss"
+Finished building: MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11394 bytes (34.8% Full)
+(.text + .data + .bootloader)
+
+Data:        130 bytes (6.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:48:00 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14810 bytes (45.2% Full)
+(.text + .data + .bootloader)
+
+Data:        295 bytes (14.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:48:00 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:48:58 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11394 bytes (34.8% Full)
+(.text + .data + .bootloader)
+
+Data:        130 bytes (6.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:48:59 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:5:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'checkpass':
+../main.c:52: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:56: warning: implicit declaration of function 'LCD_clearScreen'
+../main.c:57: warning: implicit declaration of function 'lcd_displaystring'
+../main.c:58: warning: implicit declaration of function 'LCD_movecursor'
+../main.c:63: warning: implicit declaration of function 'lcd_displayCharacter'
+../main.c:73: warning: implicit declaration of function 'itoa'
+../main.c:77: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main_menu':
+../main.c:94: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:96: warning: implicit declaration of function 'strcmp'
+../main.c:102: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:124: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:138: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:158: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'setpassword':
+../main.c:167: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:216: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:217: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'passcheck':
+../main.c:224: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c: In function 'main':
+../main.c:244: warning: implicit declaration of function 'lcd_init'
+Finished building: ../main.c
+ 
+Building target: mc1_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,mc1_test.map -mmcu=atmega32 -o "mc1_test.elf"  ./Lcd_driver.o ./gpio.o ./keypad.o ./main.o ./timer1.o ./uartf.o   
+Finished building target: mc1_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S mc1_test.elf  >"mc1_test.lss"
+Finished building: mc1_test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14466 bytes (44.1% Full)
+(.text + .data + .bootloader)
+
+Data:        295 bytes (14.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+14:48:59 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:00:57 **** Clean-only build of configuration Debug for project MC1 ****
+make clean 
+rm -rf  ./Lcd_driver.o ./gpio.o ./keypad.o ./main.o ./timer1.o ./uartf.o  sizedummy  mc1_test.lss  ./Lcd_driver.d ./gpio.d ./keypad.d ./main.d ./timer1.d ./uartf.d  mc1_test.elf
+ 
+15:00:59 **** Build of configuration Debug for project MC1 ****
+make all 
+Building file: ../Lcd_driver.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"Lcd_driver.d" -MT"Lcd_driver.o" -c -o "Lcd_driver.o" "../Lcd_driver.c"
+In file included from ../Lcd_driver.c:11:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../Lcd_driver.c: In function 'lcd_intgertostring':
+../Lcd_driver.c:156: warning: implicit declaration of function 'itoa'
+../Lcd_driver.c:157: warning: pointer targets in passing argument 1 of 'lcd_displaystring' differ in signedness
+Finished building: ../Lcd_driver.c
+ 
+Building file: ../gpio.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"gpio.d" -MT"gpio.o" -c -o "gpio.o" "../gpio.c"
+Finished building: ../gpio.c
+ 
+Building file: ../keypad.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"keypad.d" -MT"keypad.o" -c -o "keypad.o" "../keypad.c"
+In file included from ../keypad.c:14:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+Finished building: ../keypad.c
+ 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:11:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'checkpass':
+../main.c:60: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:64: warning: implicit declaration of function 'LCD_clearScreen'
+../main.c:65: warning: implicit declaration of function 'lcd_displaystring'
+../main.c:66: warning: implicit declaration of function 'LCD_movecursor'
+../main.c:71: warning: implicit declaration of function 'lcd_displayCharacter'
+../main.c:81: warning: implicit declaration of function 'itoa'
+../main.c:85: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main_menu':
+../main.c:102: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:104: warning: implicit declaration of function 'strcmp'
+../main.c:110: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:132: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:146: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:166: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'setpassword':
+../main.c:175: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:224: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:225: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'passcheck':
+../main.c:232: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c: In function 'main':
+../main.c:252: warning: implicit declaration of function 'lcd_init'
+Finished building: ../main.c
+ 
+Building file: ../timer1.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"timer1.d" -MT"timer1.o" -c -o "timer1.o" "../timer1.c"
+../timer1.c: In function 'Timer1_setCallBack':
+../timer1.c:136: warning: function return types not compatible due to 'volatile'
+Finished building: ../timer1.c
+ 
+Building file: ../uartf.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"uartf.d" -MT"uartf.o" -c -o "uartf.o" "../uartf.c"
+Finished building: ../uartf.c
+ 
+Building target: MC1.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,MC1.map -mmcu=atmega32 -o "MC1.elf"  ./Lcd_driver.o ./gpio.o ./keypad.o ./main.o ./timer1.o ./uartf.o   
+Finished building target: MC1.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S MC1.elf  >"MC1.lss"
+Finished building: MC1.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC1.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14466 bytes (44.1% Full)
+(.text + .data + .bootloader)
+
+Data:        295 bytes (14.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:01:00 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:14:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'check_pass':
+../main.c:62: warning: implicit declaration of function 'EEPROM_readByte'
+../main.c:64: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:65: warning: implicit declaration of function 'itoa'
+../main.c:70: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:74: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'receivesetpass':
+../main.c:81: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:82: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:86: warning: implicit declaration of function 'atoi'
+../main.c:87: warning: implicit declaration of function 'EEPROM_writeByte'
+../main.c:91: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:94: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main':
+../main.c:105: warning: implicit declaration of function 'lcd_init'
+../main.c:115: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+Finished building: ../main.c
+ 
+Building target: MC2.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,MC2.map -mmcu=atmega32 -o "MC2.elf"  ./Lcd_driver.o ./buzzer.o ./dc_motor.o ./external_eeprom.o ./gpio.o ./main.o ./timer1.o ./twi.o ./uartf.o   
+Finished building target: MC2.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S MC2.elf  >"MC2.lss"
+Finished building: MC2.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11394 bytes (34.8% Full)
+(.text + .data + .bootloader)
+
+Data:        130 bytes (6.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:01:01 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:02:54 **** Incremental Build of configuration Debug for project MC1 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC1.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14466 bytes (44.1% Full)
+(.text + .data + .bootloader)
+
+Data:        295 bytes (14.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:02:54 **** Incremental Build of configuration Debug for project MC2 ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 MC2.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   11394 bytes (34.8% Full)
+(.text + .data + .bootloader)
+
+Data:        130 bytes (6.3% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+15:02:55 **** Incremental Build of configuration Debug for project timer_test ****
+make all 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 timer_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:    8804 bytes (26.9% Full)
+(.text + .data + .bootloader)
+
+Data:         17 bytes (0.8% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 

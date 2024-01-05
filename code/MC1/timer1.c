@@ -1,0 +1,137 @@
+/*
+ * timer1.c
+ *
+ *  Created on: Oct 28, 2023
+ *      Author: youss
+ */
+#include "timer1.h"
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include "common_macros.h"
+#define CPU_FREQ 8000000
+static volatile void (*timer1CB)(void) = NULL_PTR;
+
+ISR(TIMER1_COMPA_vect)
+{
+	if(timer1CB != NULL_PTR)
+	{
+		/* Call the Call Back function in the application after the edge is detected */
+		(*timer1CB)();
+	}
+}
+ISR (TIMER1_OVF_vect){
+	if(timer1CB!=NULL_PTR){
+
+		(*timer1CB)();
+
+	}
+}
+
+void Timer1_init(const Timer1_ConfigType * Config_Ptr)
+{
+
+	TCNT1 = Config_Ptr->initial_value;    // Set Timer initial value to 0
+
+	/*
+	 * Selecting precaler
+	 */
+	switch(Config_Ptr->prescaler)
+	{
+	case 0:
+		TCCR1B=0;
+		break;
+	case 1:
+		TCCR1B=(1<<CS10);
+		break;
+	case 2:
+		TCCR1B=(1<<CS11);
+		break;
+	case 3:
+		TCCR1B=(1<<CS10) | (1<<CS11);
+		break;
+	case 4:
+		TCCR1B=(1<<CS12);
+		break;
+	case 5:
+		TCCR1B=(1<<CS10) | (1<<CS12);
+		break;
+	case 6:
+		TCCR1B=(1<<CS11) | (1<<CS12);
+		break;
+	case 7:
+		TCCR1B=(1<<CS10) | (1<<CS11) | (1<<CS12);
+		break;
+
+	}
+
+	switch(Config_Ptr->mode)
+	{
+
+	case 0:
+
+		CLEAR_BIT(TCCR1A,WGM13);
+		CLEAR_BIT(TCCR1A,WGM12);
+		CLEAR_BIT(TCCR1A,WGM11);
+		CLEAR_BIT(TCCR1A,WGM10);
+
+		TIMSK=(1<<TOIE1); //Overflow interrupt enable
+		break;
+
+	case 1:
+		CLEAR_BIT(TCCR1A,WGM13);
+		SET_BIT(TCCR1A,WGM12);
+		CLEAR_BIT(TCCR1A,WGM11);
+		CLEAR_BIT(TCCR1A,WGM10);
+		SET_BIT(TIMSK,OCIE1A);
+
+
+		switch(Config_Ptr->prescaler)
+		{
+		case no_clock:
+			break;
+
+		case prescalar_1:
+			OCR1A = ( (CPU_FREQ / 1) * (Config_Ptr ->compare_value) - 1);
+			break;
+
+		case prescalar_8:
+			OCR1A = ( (CPU_FREQ / 8) * (Config_Ptr ->compare_value) - 1);
+			break;
+
+		case prescalar_64:
+			OCR1A = ( (CPU_FREQ / 64) * (Config_Ptr ->compare_value) - 1);
+			break;
+
+		case prescalar_256:
+			OCR1A = ( (CPU_FREQ / 256) * (Config_Ptr ->compare_value) - 1);
+			break;
+
+		case prescalar_1024:
+			OCR1A = ( (CPU_FREQ / 1024) * (Config_Ptr ->compare_value) - 1);
+			break;
+
+		case Ext_on_falling:
+			break;
+
+		case Ext_on_rising:
+			break;
+		}
+		break;
+	}
+}
+
+void Timer1_deInit(void)
+{
+	// Disable Timer1
+	TCCR1A = 0;  // Clear all bits in TCCR1A
+	TCCR1B = 0;  // Clear all bits in TCCR1B
+	TIMSK &= ~(1 << OCIE1A); // Disable Timer1 compare match interrupt
+
+
+
+}
+
+void Timer1_setCallBack(void(*a_ptr)(void))
+{
+	timer1CB = a_ptr;
+}

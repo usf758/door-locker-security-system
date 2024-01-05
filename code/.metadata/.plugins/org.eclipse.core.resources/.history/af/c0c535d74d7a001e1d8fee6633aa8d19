@@ -1,0 +1,172 @@
+#include <avr/io.h>
+#include "uartf.h"
+#include "keypad.h"
+#include <util/delay.h>
+
+#define PASSWORD_LENGTH 5
+#define MC2_READY 0x10
+
+char password1[PASSWORD_LENGTH + 2];
+char password2[PASSWORD_LENGTH + 2];
+char password3[PASSWORD_LENGTH + 2];
+int pass1=0;
+int pass2=0;
+int pass3=0;
+int key;
+uint16 count1=0;
+uint16 count2=0;
+uint16 count3=0;
+int swap=0;
+char main_choise;
+
+void checkpass(void)
+{
+	UART_sendString("checkpass#");
+	count3 = 0;
+	pass3 = 0;
+	key=0;
+	LCD_clearScreen();
+	lcd_displaystring("Plz enter pass:");
+	LCD_movecursor(1,0);
+	_delay_ms(200);
+	while (count3 < 5) {
+		key = KEYPAD_getPressedKey();
+		_delay_ms(200);
+		lcd_displayCharacter('*');
+
+		if (key == '=')
+		{
+			break;
+		}
+		pass3 = (pass3 * 10) + (key);
+		count1++;
+
+	}
+	itoa(pass3, password3, 10);
+	password1[count3]='#';
+	password1[count3+1]='\0';
+	while(UART_recieveByte() != MC2_READY){}
+	UART_sendString(password3);
+
+
+}
+void main_menu(void)
+{
+	LCD_clearScreen();
+	lcd_displaystring("+ : Open the door");
+	LCD_movecursor(1,0);
+	lcd_displaystring("- : Change pass");
+	key = KEYPAD_getPressedKey();
+
+	if(key == '+')
+	{
+		checkpass();
+		LCD_clearScreen();
+		lcd_displaystring("Open the door");
+		_delay_ms(1000);
+
+	}
+	else if(key == '-')
+	{
+		swap=0;
+	}
+}
+void setpassword() {
+	UART_sendString("setpass#");
+	count1 = 0;
+	pass1 = 0;
+	key=0;
+	LCD_clearScreen();
+	lcd_displaystring("Plz enter pass:");
+	LCD_movecursor(1,0);
+	_delay_ms(200);
+	while (count1 < 5) {
+		key = KEYPAD_getPressedKey();
+		_delay_ms(200);
+		lcd_displayCharacter('*');
+
+		if (key == '=')
+		{
+			break;
+		}
+		pass1 = (pass1 * 10) + (key);
+		count1++;
+
+	}
+
+	LCD_clearScreen();
+	lcd_displaystring("Plz re-enter pass:");
+	LCD_movecursor(1,0);
+	count2 = 0;
+	pass2 = 0; // Initialize password
+	while (count2 < 5)
+	{
+		key = KEYPAD_getPressedKey();
+		_delay_ms(300);
+		lcd_displayCharacter('*');
+
+		if (key == '=')
+		{
+			break;
+		}
+		pass2 = (pass2 * 10) + (key);
+		count2++;
+
+	}
+	itoa(pass1, password1, 10);
+	itoa(pass2, password2, 10);
+	password1[count1]='#';
+	password1[count1+1]='\0';
+	password2[count2]='#';
+	password2[count2+1]='\0';
+
+
+	UART_sendString(password1);
+	UART_sendString(password2);
+
+}
+void passcheck(void)
+{
+	char p[10];
+	while(UART_recieveByte() != MC2_READY){}
+	UART_receiveString(p);
+
+	if(strcmp(p,"matched") == 0)
+	{
+
+		LCD_clearScreen();
+		lcd_displaystring("pass is updated");
+		swap=1;
+	}else
+	{
+		LCD_clearScreen();
+		lcd_displaystring("pass not matched!!");
+		_delay_ms(2000);
+		swap=0;
+	}
+}
+
+int main(void) {
+	UART_ConfigType uartConfig = {eightbit, Disabled, one_bit, bd9600};
+	UART_init(&uartConfig);
+	lcd_init();
+
+
+	while(UART_recieveByte() != MC2_READY){}
+	while (1)
+	{
+
+		if(swap==0)
+		{
+			setpassword();
+			passcheck();
+
+		}
+		else if(swap == 1)
+		{
+			main_menu();
+		}
+
+
+	}
+}

@@ -1,0 +1,81 @@
+#include <avr/io.h>
+#include "uartf.h"
+#include "keypad.h"
+#include <util/delay.h>
+
+#define PASSWORD_LENGTH 5
+#define MC2_READY 0x10
+
+char password1[PASSWORD_LENGTH + 2];
+char password2[PASSWORD_LENGTH + 2];
+int pass1=0;
+int pass2=0;
+int key;
+uint16 count1=0;
+uint16 count2=0;
+void setpassword() {
+	count1 = 0;
+	password1 = 0; // Initialize password
+
+	while (count1 < 5) {
+		key = KEYPAD_getPressedKey();
+		_delay_ms(300);
+
+		if (key == '=')
+		{
+			break;
+		}
+		pass1 = (pass1 * 10) + (key);
+		count1++;
+
+	}
+	count2 = 0;
+	pass2 = 0; // Initialize password
+	while (count2 < 5) {
+		key = KEYPAD_getPressedKey();
+		_delay_ms(300);
+
+		if (key == '=')
+		{
+			break;
+		}
+		pass2 = (pass2 * 10) + (key);
+		count2++;
+
+	}
+
+}
+
+
+int main(void) {
+	UART_ConfigType uartConfig = {eightbit, Disabled, one_bit, bd9600};
+	UART_init(&uartConfig);
+	lcd_init();
+
+	int x=0;
+	while(UART_recieveByte() != MC2_READY){}
+	while (1)
+	{
+		//lcd_intgertostring(KEYPAD_getPressedKey());
+		if(x==0)
+		{
+			setpassword();
+			//lcd_intgertostring(password);
+
+			itoa(pass1, password1, 10);
+			itoa(pass2, password2, 10);
+			password1[count1]='#';
+			password1[count1+1]='\0';
+			password2[count2]='#';
+			password2[count2+1]='\0';
+			lcd_displaystring(password1);
+			lcd_displaystring(password2);
+			x++;
+			UART_sendString(password1);
+			UART_sendString(password2);
+			//lcd_displaystring(password1);
+		}
+
+
+	}
+}

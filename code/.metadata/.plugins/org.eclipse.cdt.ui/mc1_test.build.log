@@ -1,0 +1,59 @@
+14:48:59 **** Incremental Build of configuration Debug for project mc1_test ****
+make all 
+Building file: ../main.c
+Invoking: AVR Compiler
+avr-gcc -Wall -g2 -gstabs -O0 -fpack-struct -fshort-enums -ffunction-sections -fdata-sections -std=gnu99 -funsigned-char -funsigned-bitfields -mmcu=atmega32 -DF_CPU=8000000UL -MMD -MP -MF"main.d" -MT"main.o" -c -o "main.o" "../main.c"
+In file included from ../main.c:5:
+f:/software/winavr/lib/gcc/../../avr/include/util/delay.h:90:3: warning: #warning "Compiler optimizations disabled; functions from <util/delay.h> won't work as designed"
+../main.c: In function 'checkpass':
+../main.c:52: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:56: warning: implicit declaration of function 'LCD_clearScreen'
+../main.c:57: warning: implicit declaration of function 'lcd_displaystring'
+../main.c:58: warning: implicit declaration of function 'LCD_movecursor'
+../main.c:63: warning: implicit declaration of function 'lcd_displayCharacter'
+../main.c:73: warning: implicit declaration of function 'itoa'
+../main.c:77: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'main_menu':
+../main.c:94: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:96: warning: implicit declaration of function 'strcmp'
+../main.c:102: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:124: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:138: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c:158: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'setpassword':
+../main.c:167: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:216: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c:217: warning: pointer targets in passing argument 1 of 'UART_sendString' differ in signedness
+../main.c: In function 'passcheck':
+../main.c:224: warning: pointer targets in passing argument 1 of 'UART_receiveString' differ in signedness
+../main.c: In function 'main':
+../main.c:244: warning: implicit declaration of function 'lcd_init'
+Finished building: ../main.c
+ 
+Building target: mc1_test.elf
+Invoking: AVR C Linker
+avr-gcc -Wl,-Map,mc1_test.map -mmcu=atmega32 -o "mc1_test.elf"  ./Lcd_driver.o ./gpio.o ./keypad.o ./main.o ./timer1.o ./uartf.o   
+Finished building target: mc1_test.elf
+ 
+Invoking: AVR Create Extended Listing
+avr-objdump -h -S mc1_test.elf  >"mc1_test.lss"
+Finished building: mc1_test.lss
+ 
+Invoking: Print Size
+avr-size --format=avr --mcu=atmega32 mc1_test.elf
+AVR Memory Usage
+----------------
+Device: atmega32
+
+Program:   14466 bytes (44.1% Full)
+(.text + .data + .bootloader)
+
+Data:        295 bytes (14.4% Full)
+(.data + .bss + .noinit)
+
+
+Finished building: sizedummy
+ 
+
+14:48:59 Build Finished. 0 errors, 19 warnings. (took 554ms)
+

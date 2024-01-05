@@ -1,0 +1,68 @@
+/*
+ * main.c
+ *
+ *  Created on: Oct 31, 2023
+ *      Author: youss
+ */
+
+#include "uartf.h"
+#include "twi.h"
+#include <util/delay.h>
+#include <string.h>
+
+#define STRING_LENGTH 5
+#define MC2_READY 0x10
+
+
+char password1[STRING_LENGTH + 2];
+char password2[STRING_LENGTH + 2];
+uint8 pass;//password in integer numbers
+uint8 val;
+uint8 counter;
+int i;
+char p[10];
+
+
+void receivesetpass(void)
+{
+	UART_receiveString(password1);
+	UART_receiveString(password2);
+
+	if(strcmp(password1,password2) == 0)
+	{
+		pass=atoi(password1);
+		EEPROM_writeByte(0x0311, pass);
+		_delay_ms(10);
+		//EEPROM_readByte(0x0311, &val);
+		UART_sendString("pass_is_updated#");
+	}else
+	{
+		UART_sendString("no_match#");
+	}
+}
+
+int main(void)
+{
+	UART_ConfigType properties={eightbit,Disabled,one_bit,bd9600};
+	UART_init(&properties);
+	TWI_init();
+	lcd_init();
+	//lcd_displaystring("Pass is:");
+	LCD_movecursor(1,0);
+	UART_sendByte(MC2_READY);
+
+
+	while(1)
+	{
+		UART_receiveString(p);
+		if(strcmp(p,"setpass") == 0)
+		{
+			receivesetpass();
+		}
+		else if(strcmp(p,"open_door") == 0)
+		{
+			LCD_clearScreen();
+			lcd_displaystring("open door:");
+		}
+	}
+}
